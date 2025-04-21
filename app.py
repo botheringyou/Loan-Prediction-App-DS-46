@@ -70,9 +70,9 @@ def predict(gender, married, dependent, education, self_employed, applicant_inco
     lam = loan_amount/1000
     cap = coApplicant_income/1000
 
-    prediction = Logistic_Regression_Model.predict{[[
+    prediction = Logistic_Regression_Model.predict([[
         gen, mar, dep, edu, sem, applicant_income, cap, lam, loan_amount_term, credit_history, pro
-    ]]}
+    ]])
 
     result = 'Not Eligible' if prediction == 0 else "Eligible"
     return result
