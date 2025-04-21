@@ -44,7 +44,7 @@ def run_ml_app():
     coApplicant_income = left.number_input('Co-Apllicant Income')
     loan_amount = right.number_input('Loan Amount')
     loan_amount_term = left.number_input('Loan Tenor in Days')
-    credit_history = right.selectbox(('Credit History'),(0,0 1,0))
+    credit_history = right.selectbox(('Credit History'),(0,0 , 1,0))
     property_area = left.selectbox('Property Area',('Semiurban', 'Urban', 'Rural'))
     button = st.button('Predict')
 
@@ -63,7 +63,7 @@ def predict(gender, married, dependent, education, self_employed, applicant_inco
     #Making prediction
     gen = 0 if gender == 'Male' else 1
     mar = 0 if married == 'Yes' else 1
-    dep = float(0 if dependent == 'None' else 1 if if dependent == 'one' else 2 if dependent == 'Two' else 3)
+    dep = float(0 if dependent == 'None' else 1 if dependent == 'one' else 2 if dependent == 'Two' else 3)
     edu = 0 if education == 'Graduate' else 1
     sem = 0 if self_employed == 'Yes' else 1
     pro = 0 if property_area == 'Semiurban' else 1 if property_area == 'Urban' else 2
